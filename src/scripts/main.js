@@ -24,5 +24,5 @@ function centerSpider() {
 if (spider.complete && spider.naturalWidth !== 0) {
   centerSpider();
 } else {
-  spider.addEventListener('load', () => centerSpider);
+  spider.addEventListener('load', centerSpider);
 }
