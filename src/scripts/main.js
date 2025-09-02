@@ -2,7 +2,7 @@
 
 const spider = document.querySelector('.spider');
 
-if (spider) {
+function centerSpider() {
   const spiderStyle = getComputedStyle(spider);
   const spiderWidth = parseInt(spiderStyle.width);
   const spiderHeight = parseInt(spiderStyle.height);
@@ -19,4 +19,10 @@ if (spider) {
       left: `${(fieldWidth - spiderWidth) / 2}px`,
     });
   }
+}
+
+if (spider.complete && spider.naturalWidth !== 0) {
+  centerSpider();
+} else {
+  spider.addEventListener('load', () => centerSpider);
 }
